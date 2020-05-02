@@ -48,12 +48,12 @@ public class SciFragment extends Fragment  implements RequestBook.Callback {
         contexto = getActivity().getApplicationContext();
 
         book_list = new ArrayList<>();
-//        recyclerView = (RecyclerView)root.findViewById(R.id.title);
-//        recyclerView.setHasFixedSize(true);
-//        manejadorLayout = new LinearLayoutManager(contexto);
-//        recyclerView.setLayoutManager(manejadorLayout);
+        recyclerView = (RecyclerView)root.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        manejadorLayout = new LinearLayoutManager(contexto);
+        recyclerView.setLayoutManager(manejadorLayout);
 
-        RequestBook.getRequest(getActivity(), this );
+        RequestBook.getRequest(getActivity(), this, "scifi" );
         handler.postDelayed(new Runnable() {
 
             @Override
@@ -69,21 +69,13 @@ public class SciFragment extends Fragment  implements RequestBook.Callback {
 
         populateRecyclerView();
 
-        final TextView textView = root.findViewById(R.id.text_sci);
-//        sciViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-        textView.setText("HOOLA");
         return root;
     }
 
     private void populateRecyclerView()
     {
-        adapter = new BookAdapter(book_list, contexto, recyclerView);
-//        recyclerView.setAdapter(adapter);
+        adapter = new BookAdapter(book_list, getActivity(), recyclerView);
+        recyclerView.setAdapter(adapter);
     }
     private String getResponse(String response)
     {
@@ -107,7 +99,7 @@ public class SciFragment extends Fragment  implements RequestBook.Callback {
                 product.setTitle(jsonArray.getJSONObject(0).getString("title"));
                 product.setAuthor(jsonArray.getJSONObject(0).getString("author"));
                 product.setEditorial(jsonArray.getJSONObject(0).getString("editorial"));
-                product.setEditorial(jsonArray.getJSONObject(0).getString("description"));
+                product.setDescription(jsonArray.getJSONObject(0).getString("description"));
                 product.setPrice(jsonArray.getJSONObject(0).getString("price"));
                 product.setUrl_image(jsonArray.getJSONObject(0).getString("url_picture"));
 

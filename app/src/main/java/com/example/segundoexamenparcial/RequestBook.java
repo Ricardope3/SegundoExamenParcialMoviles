@@ -22,12 +22,12 @@ public class RequestBook implements Serializable {
     {
 
     }
-    public static void getRequest(final Context t, final Callback callback) {
+    public static void getRequest(final Context t, final Callback callback, String genero) {
 
         activity = (Activity) t;
         RequestQueue queue = Volley.newRequestQueue(t);
 
-        String URL = "http://androidstorepddm.000webhostapp.com/services/getbooks.php?category=scifi";
+        String URL = "http://androidstorepddm.000webhostapp.com/services/getbooks.php?category=" + genero;
         StringRequest request = new StringRequest(Request.Method.GET,
                 URL,
                 new Response.Listener<String>() {

@@ -36,9 +36,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
             super(view);
             layout = view;
             textview_title = (TextView) view.findViewById(R.id.title);
-            textview_author = (TextView) view.findViewById(R.id.title);
-            textview_editorial = (TextView) view.findViewById(R.id.title);
-            textview_price = (TextView) view.findViewById(R.id.title);
+            textview_author = (TextView) view.findViewById(R.id.author);
+            textview_editorial = (TextView) view.findViewById(R.id.editorial);
+            textview_price = (TextView) view.findViewById(R.id.price);
             imageview_image = (ImageView) view.findViewById(R.id.image);
         }
     }
@@ -66,19 +66,19 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View vista =
-                inflater.inflate(R.layout.fragment_sports, parent, false);
+                inflater.inflate(R.layout.single_row, parent, false);
 
         ViewHolder view_holder = new ViewHolder(vista);
         return view_holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder manager, final int position) {
+    public void onBindViewHolder(final ViewHolder manager, final int position) {
 
         final Book book = book_list.get(position);
         manager.textview_title.setText("Titulo: " + book.getTitle());
         manager.textview_author.setText("Autor: " + book.getAuthor());
-        manager.textview_author.setText("Editorial: " + book.getEditorial());
+        manager.textview_editorial.setText("Editorial: " + book.getEditorial());
         manager.textview_price.setText("Price: " + book.getPrice());
         Picasso.with(context).load(book.getUrl_image()).placeholder(R.mipmap.ic_launcher_round).into(manager.imageview_image);
 
@@ -87,7 +87,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Description");
-                builder.setMessage("La descripcion va aqui jajaj");
+                builder.setMessage(book.getDescription());
                 builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
