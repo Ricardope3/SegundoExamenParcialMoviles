@@ -1,16 +1,16 @@
-package com.example.segundoexamenparcial.ui.send;
+package com.example.segundoexamenparcial.ui.map;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class MapViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public MapViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is email fragment");
+        mText.setValue("This is map fragment");
     }
 
     public LiveData<String> getText() {

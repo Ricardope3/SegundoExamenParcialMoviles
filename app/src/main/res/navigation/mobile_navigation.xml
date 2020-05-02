@@ -3,37 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_sci">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.segundoexamenparcial.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_sci"
+        android:name="com.example.segundoexamenparcial.ui.sci.SciFragment"
+        android:label="@string/menu_sci_fi"
+        tools:layout="@layout/fragment_sci" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.segundoexamenparcial.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_sport"
+        android:name="com.example.segundoexamenparcial.ui.sports.SportsFragment"
+        android:label="@string/menu_sports"
+        tools:layout="@layout/fragment_sports" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.segundoexamenparcial.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_english"
+        android:name="com.example.segundoexamenparcial.ui.english.EnglishFragment"
+        android:label="@string/menu_english"
+        tools:layout="@layout/fragment_english" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.segundoexamenparcial.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_art"
+        android:name="com.example.segundoexamenparcial.ui.art.ArtFragment"
+        android:label="@string/menu_art"
+        tools:layout="@layout/fragment_art" />
+    <fragment
+        android:id="@+id/nav_comic"
+        android:name="com.example.segundoexamenparcial.ui.comics.ComicsFragment"
+        android:label="@string/menu_comics"
+        tools:layout="@layout/fragment_comic" />
+    <fragment
+        android:id="@+id/nav_self"
+        android:name="com.example.segundoexamenparcial.ui.self.SelfFragment"
+        android:label="@string/menu_self"
+        tools:layout="@layout/fragment_self" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.example.segundoexamenparcial.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:name="com.example.segundoexamenparcial.ui.map.MapFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/nav_send"

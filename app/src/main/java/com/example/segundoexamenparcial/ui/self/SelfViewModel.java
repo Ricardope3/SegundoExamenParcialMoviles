@@ -1,16 +1,16 @@
-package com.example.segundoexamenparcial.ui.send;
+package com.example.segundoexamenparcial.ui.self;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class SelfViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public SelfViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is email fragment");
+        mText.setValue("This is self-help fragment");
     }
 
     public LiveData<String> getText() {
