@@ -5,27 +5,27 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="Send us an e-mail"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:text="Send us an e-mail"
+        android:textColor="@color/white"
         android:textSize="30dp" />
 
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/imageButton"
-        android:src="@drawable/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:src="@drawable/email" />
 
     <Button
         android:id="@+id/sendEmail"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Compose email"/>
+        android:layout_height="117dp"
+        android:text="Compose email" />
 
 </LinearLayout>
